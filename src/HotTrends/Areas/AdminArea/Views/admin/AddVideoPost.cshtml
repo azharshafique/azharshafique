@@ -1,0 +1,59 @@
+@model HotTrends.Models.Videopost
+@{ 
+    Layout = "_Layout";
+}
+@{
+    ViewData["Title"] = "AddVideoPost";
+}
+
+<h2>AddVideoPost</h2>
+
+<form asp-action="AddVideoPost">
+    <div class="form-horizontal">
+        <h4>Videopost</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        
+        <div class="form-group">
+            <label asp-for="VideoCategory" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="VideoCategory" class="form-control" />
+                <span asp-validation-for="VideoCategory" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="VideoDiscription" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="VideoDiscription" class="form-control" />
+                <span asp-validation-for="VideoDiscription" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="VideoEmbed" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="VideoEmbed" class="form-control" />
+                <span asp-validation-for="VideoEmbed" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="VideoName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="VideoName" class="form-control" />
+                <span asp-validation-for="VideoName" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
